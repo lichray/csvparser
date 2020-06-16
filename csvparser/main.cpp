@@ -4,6 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <numeric>
+#include <iomanip>
 
 static void process_report(std::vector<cars::record> v)
 {
@@ -30,7 +31,7 @@ static void process_report(std::vector<cars::record> v)
     cout << '\n';
 
     cout << "average length:\n";
-    cout.precision(3);
+    cout << std::fixed << std::setprecision(2);
     cout << std::accumulate(cbegin(v), cend(v), 0., add_length) / size(v)
          << '\n';
 }
